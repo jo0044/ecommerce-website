@@ -153,10 +153,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 </head>
 <body>
 <div>
-    <a href="tst.php" class="cont">Continue shopping</a>
+    <a href="/php/catalog/shop.php" class="cont">Continue shopping</a>
 </div>
-<a href="wishlistt.php" class="wish">❤️<sup style="font-size:10px"><?= $wishlistcount; ?></sup></a>
-<a href="logout.php" class="logout" title = "Logout">⏻</a>
+<a href="/php/wishlist/index.php" class="wish">&#x2665;<sup style="font-size:10px"><?= $wishlistcount; ?></sup></a>
+<a href="/php/auth/logout.php" class="logout" title="Logout">&#x23FB;</a>
 <center><h2 style="color:black; margin-bottom:30px;">Cart</h2></center>
 <?php if (mysqli_num_rows($result) > 0): ?>
     <div class="product-grid">
@@ -177,7 +177,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
         <div class="product-actions">
             <!-- Decrement quantity -->
-            <form action="update_quantity.php" method="POST" style="display:inline;">
+            <form action="/php/cart/update.php" method="POST" style="display:inline;">
                 <input type="hidden" name="product_id" value="<?= htmlspecialchars($wish['product_id']) ?>">
                 <input type="hidden" name="action" value="decrease">
                 <button type="submit" class="remove" style="width: 30px;">-</button>
@@ -187,20 +187,20 @@ while ($row = mysqli_fetch_assoc($result)) {
             <span style="margin: 0 10px; font-weight:bold; color:white;"><?= $wish['quantity'] ?></span>
 
             <!-- Increment quantity -->
-            <form action="update_quantity.php" method="POST" style="display:inline;">
+            <form action="/php/cart/update.php" method="POST" style="display:inline;">
                 <input type="hidden" name="product_id" value="<?= htmlspecialchars($wish['product_id']) ?>">
                 <input type="hidden" name="action" value="increase">
                 <button type="submit" class="remove" style="width: 30px;">+</button>
             </form>
 
             <!-- Existing Remove button -->
-            <form action="dele.php" method="POST" style="display:inline;">
+            <form action="/php/cart/remove.php" method="POST" style="display:inline;">
                 <input type="hidden" name="product_id" value="<?= htmlspecialchars($wish['product_id']) ?>">
                 <button type="submit" class="remove">Remove</button>
             </form>
 
             <!-- Existing Move to wishlist button -->
-            <form action="backtow.php" method="POST" style="display:inline;">
+            <form action="/php/cart/move-to-wishlist.php" method="POST" style="display:inline;">
                 <input type="hidden" name="product_id" value="<?= htmlspecialchars($wish['product_id']) ?>">
                 <input type="hidden" name="product_name" value="<?= htmlspecialchars($wish['product_name']) ?>">
                 <input type="hidden" name="price" value="<?= htmlspecialchars($wish['price']) ?>">
@@ -215,7 +215,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 <div style="align-self: flex-end; margin-top: 20px;">
     <p style="color:black; font-size:18px; font-weight:bold;">Subtotal (<?= $count ?> items): Rs.<?= number_format($subtotal, 2) ?></p>
 
-    <form action="order.php" method="POST" style="margin-top: 10px;">
+    <form action="/php/checkout/place-order.php" method="POST" style="margin-top: 10px;">
         <button type="submit" style="padding: 10px 20px; background-color: black; color: white; border: none; border-radius: 6px; cursor: pointer;">
             Place Order
         </button>

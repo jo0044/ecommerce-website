@@ -49,5 +49,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     mysqli_stmt_execute($update_stmt);
 }
 
-header("Location: carts.php");
+header("Location: /php/cart/index.php");
 exit;

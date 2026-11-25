@@ -95,10 +95,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['user_id'] = $user_id; 
                 $_SESSION['username'] = $username;
                 if ($username === 'admin') {
-                    header("Location: http://localhost/php/aa.htm");
+                    header("Location: http://localhost/php/admin/index.php");
                 }
                  else {
-                    header("Location: http://localhost/php/tst.php");
+                    header("Location: http://localhost/php/catalog/shop.php");
                 }
     
                 exit();
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $msgerr = "Wrong password.";
             }
         } else {
-            $msgerr = 'User does not exist. Please <a href="http://localhost/php/register.php" style="color:rgb(41, 211, 101);">register</a><br><br>';
+            $msgerr = 'User does not exist. Please <a href="/php/auth/register.php" style="color:rgb(41, 211, 101);">register</a><br><br>';
         }
     
         mysqli_stmt_close($stmt);
@@ -127,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <label for="password" style = "margin-left:30px;">Password:</label>
     <input type="password" name="password" placeholder="Please enter your password" style = "width:70%; margin-left:30px; margin-bottom:20px"><br><br>
     <input type="submit" value="Login" class="submi fr" >
-    <button type="button" class="same fr" onclick="window.location.href='http://localhost/php/register.php'">Register</button>
+    <button type="button" class="same fr" onclick="window.location.href='/php/auth/register.php'">Register</button>
 </form>
 </body>
 </html>

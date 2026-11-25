@@ -35,7 +35,7 @@ if ($product_id) {
         mysqli_stmt_execute($delete);
     }
 
-    header("Location: carts.php"); // Redirect back
+    header("Location: /php/cart/index.php"); // Redirect back
     exit;
 }
 ?>

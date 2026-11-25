@@ -18,5 +18,5 @@ $stmt = mysqli_prepare($conn, "DELETE FROM wishlist WHERE user_id = ? AND produc
 mysqli_stmt_bind_param($stmt, "ii", $user_id, $product_id);
 mysqli_stmt_execute($stmt);
 
-header("Location: wishlistt.php");
+header("Location: /php/wishlist/index.php");
 exit;

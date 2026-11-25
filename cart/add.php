@@ -55,7 +55,7 @@ if ($product_id) {
 
     $_SESSION['cart_count'] = $count;
 
-    header("Location: tst.php");
+    header("Location: /php/catalog/shop.php");
     exit;
 }
 ?>

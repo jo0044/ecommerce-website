@@ -90,6 +90,6 @@ mysqli_commit($conn);
 
 // 5. Save order summary and redirect
 $_SESSION['order_summary'] = $order_items;
-header("Location: confirm.php");
+header("Location: /php/checkout/confirmation.php");
 exit();
 ?>

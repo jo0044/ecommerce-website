@@ -72,7 +72,7 @@ foreach ($orders as $order) {
 }
     </style>
     </head>
-    <a href="logout.php" class="logout" title = "Logout">⏻</a>
+    <a href="/php/auth/logout.php" class="logout" title="Logout">&#x23FB;</a>
 <body>
     <center><h2>Order placed successfully</h2></center>
 <div class="all">
@@ -111,7 +111,7 @@ foreach ($orders as $order) {
         <p>No items found in the order.</p>
     <?php endif; ?>
 
-    <a href="tst.php" style = "margin-left:80px;" class="shop">Back to shop</a>
+    <a href="/php/catalog/shop.php" style = "margin-left:80px;" class="shop">Back to shop</a>
     </div>
 </body>
 </html>

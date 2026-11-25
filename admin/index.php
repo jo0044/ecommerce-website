@@ -73,12 +73,12 @@
         </style>
     </head>
     <body>
-    <a href="logout.php" class="logout" title = "Logout">⏻</a>
+    <a href="/php/auth/logout.php" class="logout" title="Logout">&#x23FB;</a>
     </body>
     
 
 <form method = "post" action = "">
-    <button type="button" class="button" onclick = "window.location.href='http://localhost/php/addc.php'">Add a category</button>
-    <button type="button" class="button" onclick = "window.location.href='http://localhost/php/admin.php'">Add a product</button><br>
-    <button type="button" class="buttons" onclick="window.location.href='http://localhost/php/reports.php'">Reports Overview</button>
+    <button type="button" class="button" onclick = "window.location.href='/php/admin/add-category.php'">Add a category</button>
+    <button type="button" class="button" onclick = "window.location.href='http://localhost/php/admin/add-product.php'">Add a product</button><br>
+    <button type="button" class="buttons" onclick="window.location.href='http://localhost/php/reports/index.php'">Reports Overview</button>
 </form>

@@ -42,5 +42,5 @@ if ($action === 'increase') {
 }
 
 // Redirect back to product page
-header("Location: tst.php");
+header("Location: /php/catalog/shop.php");
 exit;

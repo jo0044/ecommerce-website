@@ -32,7 +32,7 @@ if ($product_id) {
         mysqli_stmt_execute($delete);
     }
 
-    header("Location: wishlistt.php"); // Redirect back
+    header("Location: /php/wishlist/index.php"); // Redirect back
     exit;
 }
 ?>

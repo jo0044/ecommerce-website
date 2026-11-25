@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         $sql = "INSERT INTO users(name, email, mobile, gender, username, password) VALUES('$name', '$email', '$mobile', '$gender', '$username', '$password')";
         if (mysqli_query($conn, $sql)) {
-            echo 'Registered successfully! Please try to <a href="http://localhost/php/form.php">login</a>.<br><br>';
+            echo 'Registered successfully! Please try to <a href="/php/auth/login.php">login</a>.<br><br>';
         } else {
             echo "Error: " . mysqli_error($conn);
         }

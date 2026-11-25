@@ -120,11 +120,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
     if (mysqli_num_rows($res) > 0) {
         $usernameErr = "Username already exists.";
-        $msg = "Please try another username or try <a href='http://localhost/php/form.php'>logging</a> in.<br><br>";
+        $msg = "Please try another username or try <a href='/php/auth/login.php'>logging</a> in.<br><br>";
     } else {
         $sql = "INSERT INTO users(name, email, mobile, gender, username, password) VALUES('$name', '$email', '$mobile', '$gender', '$username', '$password')";
         if (mysqli_query($conn, $sql)) {
-            $msg = "Registered successfully! Please try to <a href='http://localhost/php/form.php'>login</a>.<br><br>";
+            $msg = "Registered successfully! Please try to <a href='/php/auth/login.php'>login</a>.<br><br>";
         } else {
             $msg = "Error: " . mysqli_error($conn);
         }
@@ -183,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     style = "margin-left:0px; width:163px;">
     <sup class="submi"> *</sup><br><br>
     <input type="submit" name="submit" class="how" style = "margin-left:90px;">
-    <button type="button" class="how" onclick="window.location.href='http://localhost/php/form.php'">Login</button>
+    <button type="button" class="how" onclick="window.location.href='/php/auth/login.php'">Login</button>
 </form>
 
 </body> 

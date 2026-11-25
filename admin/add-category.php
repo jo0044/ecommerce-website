@@ -64,8 +64,8 @@
             }
     </style>
     <body>
-    <a href="http://localhost/php/aa.htm" class="back">&larr;</a>
-    <a href="logout.php" class="logout" title = "Logout">⏻</a>
+    <a href="http://localhost/php/admin/index.php" class="back">&larr;</a>
+    <a href="/php/auth/logout.php" class="logout" title="Logout">&#x23FB;</a>
 <?php
 $servername = "localhost";
 $username  = "root";

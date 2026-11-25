@@ -140,8 +140,8 @@ while ($row = mysqli_fetch_assoc($result)) {
         </style>
 </head>
 <body>
-<a href="logout.php" class="logout" title = "Logout">⏻</a>
-<a href="carts.php" class = "cart" title="Cart">🛒<sup style="font-size:10px"><?= $cartCount; ?></sup></a>
+<a href="/php/auth/logout.php" class="logout" title="Logout">&#x23FB;</a>
+<a href="/php/cart/index.php" class="cart" title="Cart">Cart<sup style="font-size:10px"><?= $cartCount; ?></sup></a>
 <center><h2 style = "color:black;">Wishlist</h2></center>
 <?php if (mysqli_num_rows($result) > 0): ?>
     <div class="product-grid">
@@ -149,7 +149,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="product-card">
                 <img src="<?= htmlspecialchars($wish['image']) ?>" alt="Product Image"><br>
                 
-                <form action="cart.php" method="POST" class="wishl" style="width: 100%;">
+                <form action="/php/wishlist/add-to-cart.php" method="POST" class="wishl" style="width: 100%;">
                     <strong><?= htmlspecialchars($wish['product_name']) ?></strong>
                     <sup>Rs.<?= htmlspecialchars($wish['price']) ?></sup>
                     <input type="hidden" name="product_id" value="<?= htmlspecialchars($wish['product_id']) ?>">
@@ -160,7 +160,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                     <span><button type="submit" class="buttons">Add to cart</button></span>
                 </form>
-                <form  action="del.php" method="POST" style = "margin-right:110px;">
+                <form  action="/php/wishlist/remove.php" method="POST" style = "margin-right:110px;">
                 <input type="hidden" name="product_id" value="<?= htmlspecialchars($wish['product_id']) ?>">
                 <button type="submit" class="remove">Remove</button>   
         </form>
@@ -170,7 +170,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 <?php else: ?>
     <p>Your wishlist is empty.</p>
 <?php endif; ?>
-<a href="tst.php" class = "back">Continue shopping</a>
+<a href="/php/catalog/shop.php" class = "back">Continue shopping</a>
 </body>
 </html>
 

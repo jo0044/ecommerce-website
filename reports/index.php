@@ -154,8 +154,8 @@ mysqli_close($conn);
     </style>
 </head>
 <body>
-    <a href="http://localhost/php/aa.htm" class="back">&larr;</a>
-    <a href="logout.php" class="logout" title="Logout">⏻</a>
+    <a href="http://localhost/php/admin/index.php" class="back">&larr;</a>
+    <a href="/php/auth/logout.php" class="logout" title="Logout">&#x23FB;</a>
 
     <center style="margin-top:25px;"><h2>Top Products by Quantity Sold</h2>
     <div style="background-color:rgba(165, 24, 92, 0.2); width:990px; height:430px; margin-top:25px; padding:20px; border-radius:4px; box-shadow: 10px 11px 10px rgba(139, 9, 9, 0.57);">

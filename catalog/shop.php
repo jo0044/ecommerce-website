@@ -167,8 +167,8 @@ if ($user_id) {
 
 ?>
     
-<a href = "wishlistt.php" class="wish" title="Wishlist">❤️<sup style="font-size:10px"><?= $wishlistcount; ?></sup></a>
-<a href="logout.php" class="logout" title = "Logout">⏻</a>
+<a href="/php/wishlist/index.php" class="wish" title="Wishlist">&#x2665;<sup style="font-size:10px"><?= $wishlistcount; ?></sup></a>
+<a href="/php/auth/logout.php" class="logout" title="Logout">&#x23FB;</a>
 <?php
 function inp($data) {
     return htmlspecialchars(stripslashes(trim($data)));
@@ -176,7 +176,7 @@ function inp($data) {
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['category_id'])) {
     $_SESSION['selected_category'] = $_POST['category_id'] === "All" ? 0 : (int) $_POST['category_id'];
-    header("Location: tst.php");
+    header("Location: /php/catalog/shop.php");
     exit;
 }
 
@@ -204,8 +204,8 @@ $products = [];
 
 ?>
 <!-- Show cart icon with item count -->
-<a href="carts.php" class="cart" title="Cart">
-    🛒<sup style="font-size:10px"><?= $cartCount; ?></sup>
+<a href="/php/cart/index.php" class="cart" title="Cart">
+    Cart<sup style="font-size:10px"><?= $cartCount; ?></sup>
 </a>
 
 <!-- Category Select Form -->
@@ -244,7 +244,7 @@ if ($res && mysqli_num_rows($res) > 0) {
             <!--<p><strong>Category:</strong> <?= htmlspecialchars($product['category_id']) ?></p>-->
             <p><?= htmlspecialchars($product['description']) ?></p>
 
-        <form action="addwish.php" method="POST" class="wishl">
+        <form action="/php/wishlist/add.php" method="POST" class="wishl">
         <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['product_id']) ?>">
         <input type="hidden" name="product_name" value="<?= htmlspecialchars($product['product_name']) ?>">
         <input type="hidden" name="price" value="<?= htmlspecialchars($product['price']) ?>">
@@ -253,7 +253,7 @@ if ($res && mysqli_num_rows($res) > 0) {
         <!--<input type="hidden" name="quantity" value="<?//= htmlspecialchars($product['quantity']) ?>">-->
         <button type="submit" class="wi">Add to wishlist</button>
     </form>
-    <form action="car.php" method="POST" class="wishl">
+    <form action="/php/cart/add.php" method="POST" class="wishl">
         <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['product_id'])?>">
         <input type="hidden" name="product_name" value="<?= htmlspecialchars($product['product_name'])?>">
         <input type="hidden" name="price" value="<?= htmlspecialchars($product['price'])?>">

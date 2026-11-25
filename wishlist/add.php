@@ -32,6 +32,6 @@ if ($product_id) {
         mysqli_stmt_execute($insert);
     }    
 }
-header("Location: tst.php");
+header("Location: /php/catalog/shop.php");
 exit();
 ?>
